@@ -1,0 +1,21 @@
+React Stateful, Stateless
+
+- React = One way data flow
+- Data flows down
+  - Props is immutable
+  - Sates is mutable
+- Event flows up
+- Render by setState
+
+컴포넌트를 나누는 또다른 방식
+
+Stateful Component: 모든 state를 들고있는 컴포넌트
+Stateless Component: state를 안들고있고, props와 같이 받은 데이터만 보여주는 컴포넌트
+
+리액트는 단방향 통신이다.
+즉 부모에서 자식으로만 데이터를 전달할 수 있다. 이를 통해 데이터 흐름을 추적하기는 더 쉽지만 같은 형제끼리 데이터를 주고받기는 힘들다.
+그래서 데이터는 주로 부모가 들고있고 자식에게 전달해주는 형식이 된다. state를 들고있는 부모 컴포넌트는 stateful 컴포넌트,
+부모가 주는 데이터만 받는 컴포넌트를 stateless 컴포넌트라고 한다.(똑똑한 컴포넌트와 멍청한 컴포넌트로 불리기도 한다.)
+이렇게 컴포넌트롤 구성하면 장점은 state가 없는 stateless 컴포넌트는 재사용이 쉽고 데이터를 걱정하지 않아도 된다.(왜냐면 받아서 쓰기만 하기때문)
+모든 중요한 데이터들은 stateful 컴포넌트에 있기 때문에 유지보수가 쉽다.(stateful 컴포넌트 하나만 주시하고 관리해주면 되기때문)
+그래서 최대한 모든 컴포넌트를 stateless로 만들고 몇개의 stateful 컴포넌트에서 데이터를 관리하는 구조가 이상적이라고 리액트는 말하고 있다.
